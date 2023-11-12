@@ -15,8 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
+})->name('main');
+
+Route::group([], function () {
+    Route::get('/organization', function () {return view('organization');})->name('organization');
+    Route::get('/geodesy', function () {return view('geodesy');})->name('geodesy');
+    Route::get('/geology', function () {return view('geology');})->name('geology');
+    Route::get('/ecology', function () {return view('ecology');})->name('ecology');
+    Route::get('/vacancies', function () {return view('vacancies');})->name('vacancies');
+    Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
