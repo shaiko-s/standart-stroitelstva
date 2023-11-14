@@ -1,0 +1,167 @@
+.popup, .overlay
+    display: none
+
+.popup
+    position: absolute
+    width: 1728px
+    height: 1117px
+    top: 0
+    left: 50%
+    transform: translate(-50%, 0%)
+    border-radius: 30px
+    background: white
+    z-index: 10
+
+    .closeBtn
+        float: right
+        margin-top: 30px
+        margin-right: 26px
+        transition: transform 0.5s ease
+
+        &:hover
+            transform: rotate(90deg)
+
+    .popup-container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        clear: both
+        padding-top: 32px
+        margin: 0 144px
+
+        .logo
+            width: 389px
+            clear: both
+            align-self: center
+            margin-right: 0
+
+            .logo__img
+                width: 50px
+                height: 48px
+
+            .logo__text
+                font-style: normal
+                margin-top: 0
+
+                .logo__text--top
+                    color: #1E1E1E
+                    font-size: 14.3px
+                    font-weight: 400
+                    line-height: 29px /* 202.797% */
+
+                .logo__text--bottom
+                    color: #1E1E1E
+                    font-size: 25px
+                    font-weight: 700
+                    line-height: 29px
+
+                    .logo__text--first
+                        color: #4183A4
+
+        .menu
+            position: unset
+            margin-top: 306px
+
+            .menu-item--active
+                outline: 1px solid #108CFF
+
+        footer
+            width: 1440px
+            height: 108px
+            flex-shrink: 0
+            margin-top: 293px
+            padding: 0 45px
+            border-radius: 20px
+            background: #F4F4F4
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            .email
+                display: flex
+                align-items: center
+                cursor: pointer
+                height: 38px
+
+                &:hover .email__icon
+                    transform: scale(1.1)
+
+                .email__icon
+                    border: 1px #1E1E1E solid
+                    fill: #1E1E1E
+                    width: 38px
+                    height: 38px
+                    border-radius: 50%
+                    float: left
+                    padding-top: 11px
+                    padding-left: 11px
+
+                    svg path
+                        fill: #000
+
+                .email__address
+                    color: #1E1E1E
+                    font-size: 16px
+                    font-family: Inter
+                    font-weight: 400
+                    padding-left: 15.5px
+
+            .right-menu
+                display: flex
+                align-items: center
+
+                .phone
+                    font-size: 16px
+                    font-weight: 500
+                    font-family: "Inter", sans-serif
+                    color: #1E1E1E
+                    cursor: pointer
+
+                    span:first-child
+                        margin-right: 15px
+
+                    span:last-child
+                        padding-right: 51px
+
+.callOrderBtn
+    width: 230.542px
+    height: 55px
+    flex-shrink: 0
+    border-radius: 1000px
+    background: #108CFF
+
+    color: #FFF
+    text-align: center
+    font-family: Inter
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px /* 150% */
+
+    &:hover
+        transform: scale(1.05)
+
+.whatsApp, .telegram
+    width: 55px
+    height: 55px
+    flex-shrink: 0
+    border-radius: 1000px
+    border: 1px solid #108CFF
+    background: #FFF
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-left: 14px
+    cursor: pointer
+
+    &:hover
+        transform: scale(1.05)
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(30, 140, 255, 0.80)
+    z-index: 5
