@@ -1,0 +1,67 @@
+@use "fonts.sass"
+
+.menu
+    display: flex
+    gap: 29px
+    z-index: 2
+    position: absolute
+    bottom: 100px
+
+    a:not(.active):hover
+            transform: rotate(-4.2deg)
+
+    .menu-item
+        width: 215px
+        height: 166px
+        flex-shrink: 0
+        border-radius: 15px
+        background: #108CFF
+        padding: 27px 18px 30px
+        position: relative
+        z-index: 0
+        display: flex
+        flex-direction: column
+
+        .menu-item__spot
+            fill: #3099FA
+            float: left
+            z-index: -1
+            position: absolute
+            top: 20px
+            right: 40px
+
+        .menu-item__img
+            flex-shrink: 0
+            margin: 0 auto 22px
+
+        .menu-item__title
+            color: #FFF
+            text-align: center
+            font-family: "Grtsk Giga Regular"
+            font-size: 15px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+
+
+            // .menu-item__spot path
+            //     fill: #DCEEFF
+
+            // .menu-item__title
+            //     color: #1E1E1E
+
+            // svg g path
+            //     fill: #108CFF
+
+    .menu-item--active
+        transform: rotate(-4.2deg)
+        background: #FFF
+
+        .menu-item__spot path
+            fill: #DCEEFF
+
+        .menu-item__title
+            color: #1E1E1E
+
+        svg g path
+            fill: #108CFF
