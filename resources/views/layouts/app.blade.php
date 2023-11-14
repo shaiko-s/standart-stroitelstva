@@ -14,11 +14,23 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <body>
+        <div class="container_ {{ \Route::currentRouteName() }}">
+
+            @if (isset($piece))
+                {{ $piece }}
+            @endif
+
             @auth
-                @include('layouts.navigation')
+                @if (\Route::currentRouteName() == 'dashboard')
+                    @include('layouts.navigation')
+                @endif
             @endauth
+
+            @if (\Route::currentRouteName() !== 'dashboard')
+                <!-- Page Navigation -->
+                @include('layouts.nav')
+            @endif
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -34,5 +46,18 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <!-- Page Popup Menu -->
+        <x-popup.menu />
+        <div id="overlay" class="overlay"></div>
+
+        <x-popup.order-call />
+
+        <x-popup.success />
+
+        @if (isset($popup))
+            {{ $popup }}
+        @endif
+
     </body>
 </html>
