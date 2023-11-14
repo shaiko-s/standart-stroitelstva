@@ -1,0 +1,43 @@
+@keyframes spin
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(-360deg)
+
+.circle
+    width: 170px
+    height: 170px
+    flex-shrink: 0
+    background-color: #fff
+    border-radius: 50%
+    animation: spin 10s linear infinite
+
+    .black-circle
+        width: 154px
+        height: 154px
+        flex-shrink: 0
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    .text
+        position: absolute
+        top: 15px
+        left: 15px
+
+        text
+            color: #1E1E1E
+            text-align: center
+            font-family: "Grtsk Giga Medium"
+            font-size: 14.5px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+
+    .star
+        position: absolute
+        top: 56px
+        left: 59px
+
+
