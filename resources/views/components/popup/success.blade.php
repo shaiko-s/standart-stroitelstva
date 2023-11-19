@@ -1,15 +1,21 @@
-<!-- Menu PopUp -->
-<div id="success" class="popup">
+@props(['success'])
 
-    <x-popup.button-close id="closeSucess" />
+<!-- Menu PopUp -->
+<div id="success" class="popup" style="{{ $success ? 'display: block;' : '' }}">
+
+{{-- <div id="success" class="popup"> --}}
+
+    <x-popup.button-close id="closeSuccess" />
 
     <div class="popup-container">
 
         <h3>Спасибо!</h3>
 
-        <p>Наш менеджер скоро Вам перезвонит.</p>
+        <p>{{ $success }}</p>
 
         <img src="/images/checked_green.svg" alt="">
 
     </div>
 </div>
+
+{{-- <div id="overlay2" class="overlay" style="{{ $success==true ? 'display: block;' : '' }}"></div> --}}
