@@ -9,7 +9,7 @@
 
         <p>Оставьте Ваши данные и мы свяжемся с Вами</p>
 
-        <form id="orderCallForm">
+        <form id="orderCallForm" method="POST" action="{{ route('contacts.store') }}">
             @csrf
             <div class="input-field">
                 <input type="text" id="name" name="name" placeholder="Введите Ваше имя" required>
