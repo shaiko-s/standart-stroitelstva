@@ -4,7 +4,7 @@
     'key',
 ])
 
-<div class="menu-item {{ \Route::currentRouteName() == $key ? 'menu-item--active' : '' }} ">
+<div class="menu-item {{ explode('.', \Route::currentRouteName())[0] == $key ? 'menu-item--active' : '' }} ">
     <x-menu-item-spot />
 
     <x-menu-item-img :icon="$icon"  />
