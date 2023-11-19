@@ -155,7 +155,8 @@ $menu_items = [
 <nav class="menu">
 
     @foreach ($menu_items as $key => $menu_item)
-        <a href="{{ $menu_item['href'] }}" class=" {{ \Route::currentRouteName() == $key ? 'active' : '' }} ">
+        <a href="{{ $menu_item['href'] }}"
+           class=" {{ explode('.', \Route::currentRouteName())[0] == $key ? 'active' : '' }} ">
             <x-menu-item :title="$menu_item['title']" :icon="$menu_item['icon']" :key="$key"/>
         </a>
     @endforeach
