@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VacancyController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +25,8 @@ Route::group([], function () {
     Route::get('/geodesy', function () {return view('geodesy');})->name('geodesy');
     Route::get('/geology', function () {return view('geology');})->name('geology');
     Route::get('/ecology', function () {return view('ecology');})->name('ecology');
-    Route::get('/vacancies', function () {return view('vacancies');})->name('vacancies');
-    Route::get('/contacts', function () {return view('contacts');})->name('contacts');
+    Route::resource('vacancies', VacancyController::class)->only(['index', 'store']);
+    Route::resource('contacts', ContactController::class)->only(['index', 'store']);
 });
 
 
