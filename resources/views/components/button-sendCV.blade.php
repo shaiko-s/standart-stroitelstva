@@ -1,4 +1,4 @@
 @props(['id',
         'title' => 'Отправить резюме'])
 
-<button id="{{ $id }}" class="sendCVBtn">{{ $title }}</button>
+<button id="{{ $id }}" class="sendCVBtn" type="submit">{{ $title }}</button>
