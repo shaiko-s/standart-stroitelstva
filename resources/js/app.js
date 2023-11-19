@@ -26,7 +26,9 @@ const popup = document.getElementById('popup');
 const overlay = document.getElementById('overlay');
 const openOrderCall = document.getElementById('openOrderCall');
 const openSendCV = document.getElementById('openSendCV');
+const attachCVBtn = document.getElementById('attachCVBtn');
 const closeSendCV = document.getElementById('closeSendCV');
+const closeSuccess = document.getElementById('closeSuccess');
 
 function toggleDisplay(ids, display) {
     ids.forEach(id => {
@@ -78,5 +80,20 @@ if (openSendCV) {
 if (closeSendCV) {
     closeSendCV.addEventListener('click', function() {
         toggleDisplay(['sendCV', 'overlay'], 'none');
+    });
+}
+
+if (closeSuccess) {
+    closeSuccess.addEventListener('click', function() {
+        toggleDisplay(['success', 'overlay'], 'none');
+    });
+}
+
+if (attachCVBtn) {
+    attachCVBtn.addEventListener('click', function() {
+        document.getElementById('attachCVfile').click();
+    });
+    document.getElementById('attachCVfile').addEventListener('change', function(e) {
+        document.getElementById('attachCVBtn').textContent = e.target.files[0].name;
     });
 }
