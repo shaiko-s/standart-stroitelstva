@@ -15,7 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="container_ {{ \Route::currentRouteName() }}">
+
+        <div class="container_ {{ explode('.', \Route::currentRouteName())[0] }}">
 
             @if (isset($piece))
                 {{ $piece }}
@@ -49,15 +50,30 @@
 
         <!-- Page Popup Menu -->
         <x-popup.menu />
+
+        {{-- <div id="overlay" class="overlay" style="{{ $success==true ? 'display: block;' : '' }}"></div> --}}
         <div id="overlay" class="overlay"></div>
 
         <x-popup.order-call />
 
-        <x-popup.success />
+        {{-- <x-popup.success :success="$success" /> --}}
 
         @if (isset($popup))
             {{ $popup }}
         @endif
+
+    @if (session('success'))
+        <x-popup.success :success="session('success')" />
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var overlay = document.getElementById('overlay');
+                if (overlay.style.display == '') {
+                    overlay.style.display = 'block';
+                }
+            });
+        </script>
+    @endif
 
     </body>
 </html>
